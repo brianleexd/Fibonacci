@@ -27,11 +27,12 @@ public class Fibonacci {
     }
     
    public static int[] fibonacci(int value){
-       int[] fibnumbers = new int[value + 1];
+       int[] fibnumbers = new int[value];
+       fibnumbers[0] = 1;
        fibnumbers[1] = 1;
-       fibnumbers[2] = 1;
-       for (int n = 3; n < value; n++){
+       for (int n = 2; n < value; n++){
            fibnumbers[n] = fibnumbers [n-1] + fibnumbers[n-2];
+           System.out.println(fibnumbers[n]);
        }
        return fibnumbers;
    }
