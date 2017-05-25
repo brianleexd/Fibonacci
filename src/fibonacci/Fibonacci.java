@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fibonacci;
 
 import java.util.Scanner;
@@ -17,22 +12,27 @@ public class Fibonacci {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       int value = 0;
+       int value = -1;
        Scanner in = new Scanner(System.in);
-       System.out.println("Enter the amount of Fibonacci numbers to display");
-       while (value <= 0){
+       System.out.println("Enter the amount of Fibonacci numbers to display, 0 to exit");
+       while (value != 0){
             while (!in.hasNextInt()){
                 System.out.println("That is an invalid input");
-                System.out.println("Enter the amount of Fibonacci numbers to display");
+                System.out.println("Enter the amount of Fibonacci numbers to display, 0 to exit");
                 in.next();
-       }
+            }
             value = in.nextInt();
-            if (value <= 0){
+            if (value < 0){
                 System.out.println("That is an invalid input");
-                System.out.println("Enter the amount of Fibonacci numbers to display");
+                System.out.println("Enter the amount of Fibonacci numbers to display, 0 to exit");
+            }
+            else if (value == 0){
+                return;
+            } else {
+            printFibonacci(fibonacci(value));
+            System.out.println("Enter the amount of Fibonacci numbers to display, 0 to exit");
        }
        }
-       printFibonacci(fibonacci(value));
     }
     
    public static int[] fibonacci(int value){
