@@ -6,30 +6,29 @@ import java.util.Scanner;
  * @author Brian Lee
  */
 public class Fibonacci {
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       int value = -1;
+       int amountOfFibNumbers = -1;
        Scanner in = new Scanner(System.in);
        System.out.println("Enter the amount of Fibonacci numbers to display, 0 to exit");
-       while (value != 0){
+       while (amountOfFibNumbers != 0){
             while (!in.hasNextInt()){
                 System.out.println("That is an invalid input");
                 System.out.println("Enter the amount of Fibonacci numbers to display, 0 to exit");
                 in.next();
             }
-            value = in.nextInt();
-            if (value < 0){
+            amountOfFibNumbers = in.nextInt();
+            if (amountOfFibNumbers < 0){
                 System.out.println("That is an invalid input");
                 System.out.println("Enter the amount of Fibonacci numbers to display, 0 to exit");
             }
-            else if (value == 0){
+            else if (amountOfFibNumbers == 0){
                 return;
             } else {
-            printFibonacci(fibonacci(value));
+            printFibonacci(fibonacci(amountOfFibNumbers));
             System.out.println("Enter the amount of Fibonacci numbers to display, 0 to exit");
        }
        }
